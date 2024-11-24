@@ -1,0 +1,16 @@
+<h2>Task3</h2>
+
+<ul>
+  <li *ngFor="let exercise of exercises">
+    {{ exercise.name }} - {{ exercise.reps }}
+    <button (click)="updateExercise(exercise)">Update</button>
+    <button
+      *ngIf="exercise.id !== undefined"
+      (click)="deleteExercise(exercise.id)"
+    >
+      Delete
+    </button>
+  </li>
+</ul>
+
+<button (click)="addExercise()">Add</button>
